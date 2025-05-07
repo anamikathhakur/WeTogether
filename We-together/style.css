@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --padding-inline-section: 20px;
+    --default-fontstyle1: "Cinzel", serif;
+    --default-fontstyle2: "Orbitron", sans-serif;
+}
+ 
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+}
+
+h1 {
+   font-size: 40px;
+}
+
+h2 {
+    font-size: 2rem;
+    /* font-size: clamp(12px, 4vw, 32px);  */
+    /* font-size: 25px; */
+}
+
+h3 {
+    font-size: 1.5rem;
+    /* font-size: 20px; */
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    /* font-size: 1.25rem; */
+    font-size: 18px;
+    color: var(--primary-text-color);
+    line-height: 1.8rem;
+}
+
+a {
+    text-decoration: none;
+    display: inline;
+}
+
+ul {
+    list-style: none;
+}
+
+/* utility class */
+
+.container {
+    /* max-width: 1180px; */
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--padding-inline-section);
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.hover-link {
+    color: var(--primary-text-color);
+    transition: 0.2s ease-out;
+}
+
+.hover-link:hover {
+    color: rgb(5, 177, 177);
+}
+
+.secondary-button {
+    border: 0.5px solid rgb(5, 177, 177);
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    /* padding: 10px 20px; */
+    padding: 12px 24px;
+    text-align: center;
+    transition: 0.2s ease-out;
+}
+
+.secondary-button:hover {
+    border: 0.5px solid rgb(5, 177, 177);
+    color: rgb(5, 177, 177);
+}
+
+.primary-button {
+    background-color: rgb(5, 177, 177);
+    border-radius: 6px;
+    font-weight: 500;
+    color: white !important;
+    /* padding: 10px 15px; */
+    padding: 12px 24px;
+    box-shadow: 0 0 2px rgb(5, 177, 177);
+    transition: 0.2s ease-out;
+    text-align: center;
+}
+
+.primary-button:hover {
+    background-color: rgb(17, 84, 103);
+}
+
+/*  */
+/* Hide initially */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+  }
+  
+  /* Show when active */
+  .show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Full-screen overlay */
+  #signup-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8); /* dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Centered content */
+  .signup-content {
+    width: 350px;
+    height: 420px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    /* text-align: start; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .signup-content h3{
+    padding-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(49, 50, 50);
+    /* color: rgb(5, 177, 177); */
+    margin: 0 auto;
+  }
+  .signup-content input{
+    width: 300px;
+    height: 40px;
+    border: 2px solid rgb(190, 184, 184);
+    border-radius: 5px;
+    padding-left: 7px;
+    outline: none;
+    font-size: 17px;
+  }
+  .signup-content .signin_btn p{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-right: 20px;
+      padding-top: 10px;
+      font-size: 22px;
+  }
+  .signup-content .signin_btn button{
+    margin-top: 20px;
+    width: 100%;
+    height: 35px;
+    background-color: rgb(5, 177, 177);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    transition: 0.2s ease-in;
+  }
+  .signup-content .signin_btn button:hover{
+    border: 2px solid rgb(5, 177, 177);
+    background-color: transparent;
+    color: #000;
+  }
+
+  .signup-content a{
+    font-size: 12px;
+    margin-left: 60%;
+    padding-top: 30px;
+    text-align: end;
+    /* background-color: #183b56; */
+  }
+  
+
+/*  */
+/* top-banner */
+
+.nav-toggle {
+    display: none;
+}
+
+.small-bold-text {
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.top-banner {
+    background-color: rgb(5, 177, 177);
+}
+
+.banner-text {
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+}
+
+.main-nav {
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+    padding-inline: 20px;
+}
+
+.company-logo {
+    color: rgb(5, 177, 177);
+    /* color: black; */
+    font-size: 32px;
+    font-weight: 800;
+    font-family: var(--default-fontstyle1);
+    
+}
+
+.company-logo span {
+    /* color: rgb(5, 177, 177); */
+    color: #183b56;
+    font-weight: 800;
+    
+}
+
+.nav-links {
+    flex-basis: 730px;
+}
+
+.nav-links ul {
+    justify-content: end;
+    gap: 40px;
+}
+/* 
+.nav-links ul li{
+   font-size: 12px;
+} */
+/* header part */
+
+.header {
+    padding: 50px var(--padding-inline-section) 0;
+}
+
+.header-section {
+    justify-content: center;
+    gap: 20px;
+}
+
+.header-left {
+    max-width: 40vw;
+}
+
+.header-left .get-started-btn {
+    margin-top: 30px; 
+    
+} 
+
+.header-left p {
+    margin-bottom: 20px;
+}
+
+.header-right{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.header-right img {
+    width: 100%;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* company section */
+
+.companies-header {
+    text-align: center;
+    margin-block: 30px;
+}
+
+.logos {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.logo {
+    /* height: 100px; */
+    height: 115px;
+
+}
+
+/* features section */
+
+.feature-section {
+    padding: 80px var(--padding-inline-section) 0;
+    background-image: url("light2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.feature-header {
+    text-align: center;
+}
+
+.features-card {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 30%;
+}
+
+.features-area {
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    gap: 40px;
+}
+
+/* big-feature section */
+
+.big-feature-section {
+    padding: 35px var(--padding-inline-section) 80px;
+    margin-top: 20px;
+}
+
+.big-feature-container {
+    gap: 30px;
+}
+
+.feature-img {
+    width: 100%;
+}
+
+.feature-img img {
+    width: 70%;
+}
+
+.feature-desc {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 10px;
+}
+
+/* example section */
+.example-area {
+    justify-content: space-between;
+    margin-block: 30px;
+    flex-wrap: wrap;
+}
+
+.example-card {
+    width: 23%;
+    position: relative;
+    height: 300px;
+    background-color: rgb(20, 20, 20);
+    background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.1)), url("https://64.media.tumblr.com/6c71f668d6cc4efe5c8f35e054df3afb/tumblr_p9dkkimwHV1ungyueo2_1280.jpg");
+    background-size: cover;
+    transition: 0.2s ease-out;
+}
+
+.example-card:hover {
+    box-shadow: 0 0 10px #888;
+}
+
+.example-card:nth-child(2) {
+    background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.1)), url("https://wallup.net/wp-content/uploads/2018/03/17/540089-programmers-AutoHotkey-code-programming-laptop-ThinkPad.jpg");
+    background-size: cover;
+}
+
+.example-card:nth-child(3) {
+    background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.1)), url("https://blog.useproof.com/static/f7e956a4322a40b504871a605731184b/7293b/Metrics-to-Keep-an-Eye-On.jpg");
+    background-size: cover;
+}
+
+.example-card:nth-child(4) {
+    background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.1)), url("https://th.bing.com/th/id/OIP.rYQZtBhlU1CAH5wLbHElGwHaEI?rs=1&pid=ImgDetMain");
+    background-size: cover;
+}
+
+.example-text {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+/* cta section */
+
+.cta-section-container {
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.cta-section-container p {
+    color: white;
+    margin-top: 20px;
+}
+
+.cta-section {
+    background-color: #183b56;
+    padding: 120px var(--padding-inline-section) 80px;
+}
+
+/* footer */
+.footer {
+    padding-block: 80px;
+    background-color: #ebf2fa;
+}
+
+.link-column {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-container {
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* sub footer */
+.sub-footer {
+    background-color: #b9cde4;
+    padding: var(--padding-inline-section);
+}
+
+.subfooter-container {
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
